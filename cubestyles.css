@@ -1,0 +1,57 @@
+/* Body styling for centering the cube section */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    margin: 0;
+    background-color: #0a1e39;
+    color: #fff;
+}
+
+/* Cube container */
+#cubecenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* 3D scene setup */
+.scene {
+    width: 300px;
+    height: 300px;
+    perspective: 500px; /* Depth for 3D effect */
+}
+
+/* Cube styling */
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg); /* Initial rotation */
+    transition: transform 0.5s ease-out;
+}
+
+/* Styling for each face of the cube */
+.face {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Positioning the six faces of the cube */
+.front  { transform: rotateY(  0deg) translateZ(150px); }
+.back   { transform: rotateY(180deg) translateZ(150px); }
+.right  { transform: rotateY( 90deg) translateZ(150px); }
+.left   { transform: rotateY(-90deg) translateZ(150px); }
+.top    { transform: rotateX( 90deg) translateZ(150px); }
+.bottom { transform: rotateX(-90deg) translateZ(150px); }
