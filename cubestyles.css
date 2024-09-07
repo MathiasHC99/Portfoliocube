@@ -19,8 +19,8 @@ body {
 
 /* 3D scene setup */
 .scene {
-    width: 400px;  /* Updated to 500px */
-    height: 400px; /* Updated to 500px */
+    width: 400px;
+    height: 400px;
     perspective: 1000px; /* Depth for 3D effect */
 }
 
