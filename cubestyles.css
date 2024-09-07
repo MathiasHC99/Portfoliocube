@@ -3,10 +3,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 600px;
+    height: 800px;
     margin: 0;
-    background-color: #0a1e39;
-    color: #fff;
+    background: radial-gradient(circle, white 0%, black 100%);
+    color: white;
 }
 
 /* Cube container */
@@ -19,9 +19,9 @@ body {
 
 /* 3D scene setup */
 .scene {
-    width: 300px;
-    height: 300px;
-    perspective: 500px; /* Depth for 3D effect */
+    width: 400px;  /* Updated to 500px */
+    height: 400px; /* Updated to 500px */
+    perspective: 1000px; /* Depth for 3D effect */
 }
 
 /* Cube styling */
@@ -37,21 +37,39 @@ body {
 /* Styling for each face of the cube */
 .face {
     position: absolute;
-    width: 300px;
-    height: 300px;
-    background-color: rgba(255, 255, 255, 0.1);
+    width: 400px;
+    height: 400px;
+    background-color: green;
     border: 2px solid #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+    flex-direction: column;
     text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-/* Positioning the six faces of the cube */
-.front  { transform: rotateY(  0deg) translateZ(150px); }
-.back   { transform: rotateY(180deg) translateZ(150px); }
-.right  { transform: rotateY( 90deg) translateZ(150px); }
-.left   { transform: rotateY(-90deg) translateZ(150px); }
-.top    { transform: rotateX( 90deg) translateZ(150px); }
-.bottom { transform: rotateX(-90deg) translateZ(150px); }
+/*  cube face positioning */
+.front  { transform: rotateY(  0deg) translateZ(200px); }
+.back   { transform: rotateY(180deg) translateZ(200px); }
+.right  { transform: rotateY( 90deg) translateZ(200px); }
+.left   { transform: rotateY(-90deg) translateZ(200px); }
+.top    { transform: rotateX( 90deg) translateZ(200px); }
+.bottom { transform: rotateX(-90deg) translateZ(200px); }
+
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+a:hover {
+    text-decoration: underline;
+}
