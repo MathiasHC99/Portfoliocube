@@ -107,6 +107,17 @@ p {
     }
 }
 
+.pepe {
+    width: 100%;
+    opacity: 0.05; /* Make the image almost invisible */
+    position: absolute; /* Position it within the face */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the image */
+    z-index: -1; /* Send it behind other content */
+}
+
+
 
 
 
