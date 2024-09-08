@@ -6,7 +6,7 @@ body {
     height: 800px;
     margin: 0;
     background: radial-gradient(circle, #37B7C3 0%, #071952 100%);
-    color: white; /* text color */
+    color: white;
 }
 
 /* Cube container */
@@ -111,9 +111,10 @@ p {
     width: 100%;
     opacity: 0.1; /* Make the image almost invisible */
     position: absolute; /* Position it within the face bottom */
-    z-index: -1; /* Send it behind other content */
+    z-index: -1; /* Send it behind other content and text */
 }
 
+/* logo size and position */
 .logos img {
     width: 30px;
     height: auto;
