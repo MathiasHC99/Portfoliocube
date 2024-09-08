@@ -109,7 +109,7 @@ p {
 
 .pepe {
     width: 100%;
-    opacity: 0.05; /* Make the image almost invisible */
+    opacity: 0.1; /* Make the image almost invisible */
     position: absolute; /* Position it within the face bottom */
     z-index: -1; /* Send it behind other content */
 }
