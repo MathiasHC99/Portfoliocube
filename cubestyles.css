@@ -108,13 +108,10 @@ p {
 }
 
 .pepe {
-    width: 100%; /* Set a smaller width */
+    width: 100%;
     height: auto; /* Maintain aspect ratio */
     opacity: 0.05; /* Make the image almost invisible */
-    position: absolute; /* Position it within the face */
-    top: 50%; /* Center it vertically */
-    left: 50%; /* Center it horizontally */
-    transform: translate(-50%, -50%); /* Center the image */
+    position: absolute; /* Position it within the face bottom */
     z-index: -1; /* Send it behind other content */
 }
 
