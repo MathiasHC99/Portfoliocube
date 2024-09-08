@@ -115,10 +115,9 @@ p {
 }
 
 .logos img {
-    width: 30px; /* Adjust the width */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 10px; /* Add some space around the logos */
-    vertical-align: middle; /* Align it properly with text */
+    width: 30px;
+    height: auto;
+    vertical-align: middle;
     display: inline-block;
 }
 
