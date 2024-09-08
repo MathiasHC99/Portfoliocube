@@ -1,12 +1,12 @@
-/* Body styling for centering the cube section */
+/* Body styling for centering the cube section and cube color */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 800px;
     margin: 0;
-    background: radial-gradient(circle, white 0%, black 100%);
-    color: white;
+    background: radial-gradient(circle, #37B7C3 0%, #071952 100%);
+    color: white; /* text color */
 }
 
 /* Cube container */
@@ -22,6 +22,7 @@ body {
     width: 400px;
     height: 400px;
     perspective: 1000px; /* Depth for 3D effect */
+
 }
 
 /* Cube styling */
@@ -31,7 +32,8 @@ body {
     position: relative;
     transform-style: preserve-3d;
     transform: rotateX(0deg) rotateY(0deg); /* Initial rotation */
-    transition: transform 0.5s ease-out;
+    transition: transform 1s ease-out; /* smooth rotation */
+
 }
 
 /* Styling for each face of the cube */
@@ -39,8 +41,9 @@ body {
     position: absolute;
     width: 400px;
     height: 400px;
-    background-color: green;
-    border: 2px solid #fff;
+    background-color: #088395;
+    box-shadow: 0 0 20px #37B7C3;
+    border: 2px solid #37B7C3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,6 +73,45 @@ p {
     padding: 0;
 }
 
-a:hover {
-    text-decoration: underline;
+/* Adjust scene and cube face size for mobile */
+@media (max-width: 500px) {
+    .scene {
+        width: 400px;
+        height: 400px;
+    }
+
+    .face {
+        width: 400px;
+        height: 400px;
+    }
+
+    /* Adjust text size for mobile */
+    h2 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
 }
+
+
+/* spin animation when page is loaded */
+.cube {
+    animation: initialSpin 1.5s ease-out;
+}
+
+@keyframes initialSpin {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+
+
+
+
+

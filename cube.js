@@ -14,7 +14,7 @@ cube.addEventListener('touchstart', startTouch);
 window.addEventListener('touchend', stopTouch);
 window.addEventListener('touchmove', onTouchMove);
 
-// Function to handle the start of dragging (mouse)
+// Function to handle the start of dragging (mouse click event)
 function startDrag(e) {
     isDragging = true;
     startX = e.pageX;
@@ -33,7 +33,7 @@ function stopDrag() {
     isDragging = false;
 }
 
-// Function to stop touching (mobile touch event)
+// Function to stop touching (mobile touch)
 function stopTouch() {
     isDragging = false;
 }
@@ -58,7 +58,7 @@ function onDrag(e) {
     startY = e.pageY;
 }
 
-// Function to handle touch movement (mobile)
+// Function to handle touch movement (mobile touch)
 function onTouchMove(e) {
     if (!isDragging) return;
 
@@ -77,3 +77,4 @@ function onTouchMove(e) {
     startX = e.touches[0].pageX;
     startY = e.touches[0].pageY;
 }
+
