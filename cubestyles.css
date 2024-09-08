@@ -22,7 +22,6 @@ body {
     width: 400px;
     height: 400px;
     perspective: 1000px; /* Depth for 3D effect */
-
 }
 
 /* Cube styling */
@@ -32,8 +31,7 @@ body {
     position: relative;
     transform-style: preserve-3d;
     transform: rotateX(0deg) rotateY(0deg); /* Initial rotation */
-    transition: transform 1s ease-out; /* smooth rotation */
-
+    transition: transform 1s ease-out; /* smooth rotation stop */
 }
 
 /* Styling for each face of the cube */
@@ -42,8 +40,8 @@ body {
     width: 400px;
     height: 400px;
     background-color: #088395;
-    box-shadow: 0 0 20px #37B7C3;
     border: 2px solid #37B7C3;
+    box-shadow: 0 0 20px #37B7C3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,6 +71,20 @@ p {
     padding: 0;
 }
 
+/* spin animation when page is loaded */
+.cube {
+    animation: initialSpin 1.5s ease-out;
+}
+
+@keyframes initialSpin {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
 /* Adjust scene and cube face size for mobile */
 @media (max-width: 500px) {
     .scene {
@@ -95,20 +107,6 @@ p {
     }
 }
 
-
-/* spin animation when page is loaded */
-.cube {
-    animation: initialSpin 1.5s ease-out;
-}
-
-@keyframes initialSpin {
-    0% {
-        transform: rotateX(0deg) rotateY(0deg);
-    }
-    100% {
-        transform: rotateX(360deg) rotateY(360deg);
-    }
-}
 
 
 
