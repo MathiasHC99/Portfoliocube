@@ -109,11 +109,24 @@ p {
 
 .pepe {
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
     opacity: 0.05; /* Make the image almost invisible */
     position: absolute; /* Position it within the face bottom */
     z-index: -1; /* Send it behind other content */
 }
+
+.logos img {
+    width: 30px; /* Adjust the width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 10px; /* Add some space around the logos */
+    vertical-align: middle; /* Align it properly with text */
+    display: inline-block;
+}
+
+.logos {
+    text-decoration: none;
+}
+
+
 
 
 
