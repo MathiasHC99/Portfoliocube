@@ -6,11 +6,11 @@ body {
     height: 800px;
     margin: 0;
     background: radial-gradient(circle, #37B7C3 0%, #071952 100%);
-    color: white;
+    color: #000000;
 }
 
 /* Cube container */
-#cubecenter {
+#cubeCenter {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,7 +82,7 @@ p {
 
 /* Style the anchor links inside the list */
 .face.back ul li a {
-    color: white;
+    color: #000000;
     text-decoration: none;
 }
 
@@ -90,6 +90,10 @@ p {
     text-decoration: underline;
 }
 
+.face.right p a {
+    color: #000000;
+    text-decoration: underline;
+}
 
 
 /* spin animation when page is loaded */
@@ -146,6 +150,62 @@ p {
 .logos {
     text-decoration: none;
 }
+
+
+
+/* dark/light mode toggle */
+.darkMode {
+    background: radial-gradient(circle, #404040 0%, #000000 100%);
+    color: white;
+}
+
+Button {
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    padding: 5px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.darkMode .face {
+    background-color: #404040;
+    border: 2px solid #000000;
+    box-shadow: 0 0 20px #000000;
+}
+
+.darkMode .face.back ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+.darkMode .face.back ul li a:hover {
+    text-decoration: underline;
+}
+
+.darkMode .face.right p a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
+.darkMode button {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.darkMode button:hover {
+    background-color: #555;
+}
+
+
+
 
 
 

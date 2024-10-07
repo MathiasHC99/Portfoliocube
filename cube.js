@@ -78,3 +78,11 @@ function onTouchMove(e) {
     startY = e.touches[0].pageY;
 }
 
+/* dark/light mode toggle */
+const themeToggleButton = document.getElementById('themeToggle');
+const body = document.body;
+
+themeToggleButton.addEventListener('click', () => {
+    body.classList.toggle('darkMode');
+    themeToggleButton.textContent = body.classList.contains('darkMode') ? 'Light mode' : 'Dark mode';
+    });
