@@ -78,16 +78,85 @@ function onTouchMove(e) {
     startY = e.touches[0].pageY;
 }
 
-/* dark/light mode toggle */
+
+
+
+/* Party mode toggle */
+const partyToggleButton = document.getElementById('partyToggle');
 const themeToggleButton = document.getElementById('themeToggle');
 const body = document.body;
+let partyActive = false; // Track whether party mode is active or not
+let partyInterval; // Store interval ID for color changes
 
+// Function to generate a random color
+// inspired by article on stackoverflow
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+// Function to change all cube face colors, shadow, and border to the same random color
+function changeCubeColors() {
+    const randomColor = getRandomColor();
+    const faces = document.querySelectorAll('.face');
+    faces.forEach(face => {
+        face.style.backgroundColor = randomColor; //
+        face.style.boxShadow = `0 0 20px ${randomColor}`; // Apply the same color to shadows
+        face.style.border = `2px solid ${randomColor}`; // Apply the same color to the borders
+    });
+}
+
+// Party mode toggle
+partyToggleButton.addEventListener('click', () => {
+    partyActive = !partyActive;
+    if (partyActive) {
+        partyToggleButton.textContent = 'Stop party';
+        startPartyMode();
+    } else {
+        partyToggleButton.textContent = 'Party mode';
+        stopPartyMode();
+    }
+});
+
+function startPartyMode() {
+    changeCubeColors();
+    partyInterval = setInterval(changeCubeColors, 2000); // Change color every 2 sec (to match the fade duration)
+}
+
+function stopPartyMode() {
+    clearInterval(partyInterval); // Stop color changes
+    resetCubeColors(); // Reset the cube colors based on the current mode (dark or light)
+}
+
+// Function to reset the cube faces to the original colors based on the current theme
+// I gotta update this and make it more smooth and separate css and js
+function resetCubeColors() {
+    const faces = document.querySelectorAll('.face');
+    if (body.classList.contains('darkMode')) {
+        faces.forEach(face => {
+            face.style.backgroundColor = '#404040'; // Dark mode color
+            face.style.boxShadow = '0 0 20px #000000'; // Dark mode shadow
+            face.style.border = '2px solid #000000'; // Dark mode border
+        });
+    } else {
+        faces.forEach(face => {
+            face.style.backgroundColor = '#088395'; // Light mode color
+            face.style.boxShadow = '0 0 20px #37B7C3'; // Light mode shadow
+            face.style.border = '2px solid #37B7C3'; // Light mode border
+        });
+    }
+}
+
+// Dark mode toggle
 themeToggleButton.addEventListener('click', () => {
     body.classList.toggle('darkMode');
     themeToggleButton.textContent = body.classList.contains('darkMode') ? 'Light mode' : 'Dark mode';
-    });
-
-
-
-
+    if (!partyActive) {
+        resetCubeColors();
+    }
+});
 

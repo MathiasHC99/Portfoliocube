@@ -153,6 +153,8 @@ p {
 
 
 
+
+
 /* dark/light mode toggle */
 .darkMode {
     background: radial-gradient(circle, #404040 0%, #000000 100%);
@@ -205,5 +207,42 @@ button:hover {
     background-color: #404040;
 }
 
+button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 
+/* Party mode toggle  */
+.face {
+    transition: background-color 2s ease, border-color 2s ease, box-shadow 2s ease;
+}
+
+
+button {
+    position: fixed;
+    top: 10px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+
+#partyToggle {
+    left: 120px; /* next to the dark/light mode button */
+}
+
+button:hover {
+    background-color: #555;
+}
